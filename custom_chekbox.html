@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom chekbox</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        /* position:absolute;*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(187, 179, 179, 0.753);
+        min-height: 100vh;
+
+    }
+
+    .check {
+        background: rgb(88, 85, 85);
+        position: relative;
+        width: 120px;
+        height: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        
+    }
+
+    .check::before{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 4px;
+    background: rgb(54, 51, 51);
+    border-radius: 5px; 
+ }
+     .check input {
+        position: absolute;
+        width: 120px;
+        height: 15px;
+      
+        appearance: none;
+        cursor: pointer;
+
+    } 
+    .icon{
+        position: absolute;
+        left: -15px;
+        width: 60px;
+        height: 60px;
+        background-color: grey;
+        transition: 0.5s;
+    }
+ 
+    .check input:checked ~ .icon{
+        position: relative;
+        left: 40px;
+      
+       
+    } 
+
+    .icon::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 100%;
+        background: linear-gradient(#fff,#fff,#e3e3e3);
+        filter: blur(1px);
+        z-index: 1;
+    }
+    .icon::after{
+    content: '';
+        position: absolute;
+        top: 0px;
+       right: -1px;
+        width: 10px;
+        height: 100%;
+        background: #9d9d9d;
+        filter: blur(1px);
+      }
+     
+     /* .shadow{
+        position:relative;
+        top: 149px;
+        left: -29px;
+        width: 80.85px;
+        height: 300px;
+        background: linear-gradient(180deg,rgba(165, 0, 0, 0.688));
+       
+        transform-origin: top;
+        transform: rotate(315deg);
+        pointer-events: none;
+        
+    }   */
+    /* .iconbox{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(#dbdae1,#a3aaba);
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.1),15px 15px 15px rgba(0,0,0,0.1),20px 20px 20px rgba(0,0,0,0.1),30px 30px 30px rgba(0,0,0,0.1),inset 1px 1px 2px #fff;
+
+    }  */
+    /* .icon:checked{
+        position: absolute;
+        left: 60px;
+    } */
+</style>
+
+<body>
+    <div class="check">
+         <input type="checkbox">
+      <div class="icon"> </div>
+            <div class="shadow">
+                
+                <div class="iconbox"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

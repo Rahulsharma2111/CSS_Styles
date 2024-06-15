@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: grey;
+    }
+
+    .clock {
+        background: burlywood;
+        /* background-size: cover; */
+        height: 250px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 6px solid rgba(168, 157, 157, 0.904);
+        box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+            inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+            0 15px 15px rgba(0, 0, 0, 0.05),
+            inset 0 15px 15px rgba(0, 0, 0, 0.05);
+
+    }
+
+
+    .clock::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgb(30, 30, 196);
+        z-index: 10000;
+    }
+
+    .clock .hour,
+    .clock .minute,
+    .clock .second {
+        /* width: 7px;
+        height: 70px;
+        border-radius: 0 0 3px 3px;
+        background: black; */
+        position: absolute;
+    }
+
+    .clock .hour,
+    .hr {
+        width: 160px;
+        height: 160px;
+    }
+
+    .clock .minute,
+    .min {
+        width: 190px;
+        height: 190px;
+    }
+
+    .clock .second,
+    .sec {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hr,
+    .min,
+    .sec {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        position: absolute;
+        border-radius: 50%;
+
+    }
+
+    .hr::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 80px;
+        background: rgb(110, 33, 33);
+        z-index: 10;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .min::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 90px;
+        background: rgb(19, 182, 174);
+        z-index: 11;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .sec::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 150px;
+        background: rgb(31, 219, 14);
+        z-index: 12;
+        border-radius: 6px 6px 0 0;
+    }
+
+    h1 {
+        position: absolute;
+        top: 1px;
+    }
+</style>
+
+<body onload="show()">
+    <div class="clock">
+        <h1></h1>
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="minute">
+            <div class="min" id="min"></div>
+
+        </div>
+        <div class="second">
+            <div class="sec" id="sec"></div>
+
+        </div>
+
+
+    </div>
+    <script>
+                setTimeout(show, 1000)
+
+        function show() {
+            const deg = 6;
+            const hr = document.querySelector('#hr');
+            const min = document.querySelector('#min');
+            const sec = document.querySelector('#sec');
+
+            setInterval(() => {
+
+                let day = new Date();
+                let hh = day.getHours() * 30;
+                let mm = day.getMinutes() * deg;
+                let ss = day.getSeconds() * deg;
+                var time = hh + ": " + mm + ": " + ss + " ";
+                document.getElementsByTagName('h1')[0].innerHTML = time;
+                hr.style.transform = 'rotateZ(${(hh)*(mm/12)}deg)';
+                min.style.transform = 'rotateZ(${mm}deg)';
+                sec.style.transform = 'rotateZ(${ss}deg)';
+
+            })
+        }
+
+                //             const deg = 6;
+                //         const hr = document.querySelector('#hr');
+                //         const min = document.querySelector('#min');
+                //         const sec = document.querySelector('#sec');
+                // 
+                //          setInterval(() => {
+                // 
+                //             let day = new Date();
+                //             let hh = day.getHours() * 30;
+                //             let mm = day.getMinutes() * deg;
+                //             let ss = day.getSeconds() * deg;
+                // hr.style.transform = 'rotateZ(${(hh)*(mm/12)}deg)';
+                // min.style.transform = 'rotateZ(${mm}deg)';
+                // sec.style.transform = 'rotateZ(${ss}deg)';
+                // })
+
+           
+
+
+
+
+
+
+//         function showTime(){
+//     var d = new Date();
+//     var h = d.getHours() ;
+//     var m = d.getMinutes();
+//     var s = d.getSeconds();
+// 
+//     var time = h + ":" +m +": "+s+" ";
+//     document.getElementsByTagName('h1')[0].innerHTML=time;
+//     setTimeout(showTime,1000);
+// }
+
+
+    </script>
+</body>
+
+</html>

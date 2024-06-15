@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On text focus</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        background: rgba(167, 163, 163, 0.801);
+    }
+
+    .first {
+        width: 215px;
+        position: relative;
+        top: -156px;
+        left: 150px;
+        opacity: 0.5;
+    }
+
+    .first:hover {
+        opacity: 1;
+    }
+
+
+
+
+    .second {
+        width: 215px;
+        position: relative;
+        top: 132px;
+        left: -88px;
+        opacity: 0.5;
+
+    }
+
+    .second:hover {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <div class="first" id="firs" onclick="fouss()">
+        <p class="pra">Enter your number</p><br>
+        <input type="number">
+    </div>
+    <br><br><br><br><br>
+    <p>OR</p>
+    <br><br><br><br><br>
+    <div class="second" id="sec" onclick="fous()">
+        <p class="praa"> Enter your email</p><br>
+        <input type="email">
+
+
+</body>
+<script>
+    var x = document.getElementById('firs').style.opacity = 0.5;
+
+    function fouss() {
+        if (x == 0.5)
+            document.getElementById('firs').style.opacity = 1;
+    }
+    var y = document.getElementById('sec').style.opacity = 0.5;
+    function fous() {
+        if (y == 0.5)
+            document.getElementById('sec').style.opacity = 1;
+    }
+    // function fous(){
+    //     document.getElementsByClassName('first').style.opacity=1;
+    // }
+</script>
+
+</html>

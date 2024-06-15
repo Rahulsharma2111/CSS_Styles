@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><style>
+#video{
+    width:250px;
+    height:250px;
+    border: 2px solid rgb(26, 153, 36);
+}
+</style>
+<body>
+    <video id="video" autoplay="true"></video>
+    <script>
+        let video = document.getElementById('video');
+        if (navigator.mediaDevices.getUseMedia){
+            navigator.mediaDevices.getUserMedia({video:true})
+            .then(function(s) {
+                video.srcObject=s;
+            })
+            .catch(function(err){
+            console.log('err');
+
+            });
+        } else{
+            console.log('No');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Rotate</title>
+
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background:linear-gradient(red,green,blue); */
+    background: grey;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+.main_div{
+    height: 500px;
+    width: 550px;
+    background: rgba(56, 16, 16, 0.329);
+    position: relative;
+}
+.Card{
+    height: 270px;
+    border-radius: 10%;
+    position: absolute;
+    width: 180px;
+    top: 25%;
+    left: 34%;
+    display: flex;
+
+}
+.main_div div:nth-child(1){
+    background-color: rgba(221, 218, 24);
+    position: absolute;
+    z-index: 3;
+    
+    /* transform-origin: bottom left;
+    transform: rotateZ(335deg); */
+    animation: rotateFirst 2.5s linear infinite;
+}
+@keyframes otateFirst{
+    0%,50%,100%{
+        filter: hue-rotate(0deg) ; 
+        box-shadow: #2982b9; 
+
+    }
+    25%,75%{
+        filter: hue-rotate(360deg);
+        
+    } 
+}
+.main_div div:nth-child(2){
+    background-color: rgba(12, 158, 48);
+    transform-origin: bottom left;
+    transform: rotateZ(0deg);
+    position: absolute;
+    z-index: 2;
+    animation: rotateSecond 2.5s linear infinite;
+    animation: eSecond 2.5s linear infinite;
+}
+@keyframes eSecond{
+    0%,100%{
+    transform: rotateZ(343deg);
+    top: 135px;
+    left: 168px;
+
+    }
+    /* 50%{
+    transform: rotateZ(-45deg);
+        
+    }  */
+}
+@keyframes rotateSecond{
+    0%,50%,100%{
+        filter: hue-rotate(0deg) ; 
+
+    }
+    25%,75%{
+        filter: hue-rotate(360deg);
+        
+    } 
+}
+.main_div div:nth-child(3){
+    background-color: rgba(20, 133, 141);
+    transform-origin: bottom right;
+    transform: rotateZ(0deg);
+    position: absolute;
+    z-index: 1;
+    animation: rotateThird 2.5s linear infinite;
+    animation: eThird 2.5s linear infinite;
+}
+@keyframes eThird{
+    0%,100%{
+     transform: rotateZ(324deg);
+    top: 39px;
+    left: 124px;
+}
+   
+    /* 50%{
+    transform: rotateZ(-45deg);
+        
+    }  */
+}
+@keyframes rotateThird{
+    0%,50%,100%{
+        filter: hue-rotate(0deg) ; 
+
+    }
+    25%,75%{
+        filter: hue-rotate(360deg);
+
+        
+    } 
+}
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+</style>
+<body>
+    <div class="main_div">
+<div class="Card First"><img src="img\images (1).jpeg"></div>
+<div class="Card Second"><img src="img\pngegg (15).png"></div>
+<div class="Card Third"><img src="img\pngegg (16).png"></div>
+
+    </div>
+</body>
+</html>

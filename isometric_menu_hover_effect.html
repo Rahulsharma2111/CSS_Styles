@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isometric menu hover effect</title>
+</head>
+<style>
+    * {
+        margin: -px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: grey;
+
+    }
+
+    ul {
+        position: relative;
+        transform: skewY(-15deg);
+transform: skewY(-15deg);
+    }
+
+    ul li {
+        position: relative;
+        list-style: none;
+        width: 200px;
+        background: #3e3f46;
+        padding: 15px;
+        z-index: var(--i);
+        transition: 0.5s
+    }
+    ul li:hover{
+        /* position: relative; */
+        background: #3e34ee;
+        transform: translateX(-60px);
+    }
+    ul li::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -40px;
+        width: 40px;
+        height: 100%;
+        background: #2a2a2c;
+        transform-origin: right;
+        transform: skewY(45deg);
+        transition: 0.5s;
+    }
+    ul li:hover:before{
+        background: #3e34ee;
+    }
+    ul li::after{
+        content: '';
+        position: absolute;
+        top:-40px ;
+        left: 0;
+        width: 200px;
+        height: 40px;
+        background: #38383a;
+        transform-origin: bottom;
+        transform: skewX(45deg);
+        transition: 0.5s;
+    }
+    ul li:hover:after{
+        background: #3e34ee;
+    }
+    ul li a {
+        text-decoration: none;
+        color: rgb(81, 133, 133);
+        display: block;
+        text-transform: uppercase;
+        font-size: 25px;
+        letter-spacing: 2px;
+        transition: 0.5s;
+    }
+    ul li:hover a{
+        color: aqua;
+        
+    }
+</style>
+
+<body>
+    <ul>
+        <li style="--i:6;"><a href="#">Home</a></li>
+        <li style="--i:5;"><a href="#">About</a></li>
+        <li style="--i:4;"><a href="#">Images</a></li>
+        <li style="--i:3;"><a href="#">Video</a></li>
+        <li style="--i:2;"><a href="#">Content</a></li>
+        <li style="--i:1;"><a href="#">Serives</a></li>
+    </ul>
+    <div class="">
+
+    </div>
+
+</body>
+
+</html>

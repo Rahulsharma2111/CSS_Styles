@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neon button</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        position: absolute;
+        font-size: 40px;
+        color: rgb(0, 0, 0);
+        width: 200px;
+        transition: 0.5s;
+        box-shadow: -1px 6px 23px 12px rgba(27, 48, 170, 0.9);
+        overflow: hidden;
+        
+
+    }
+    .container::before{
+        content: '';
+        position: absolute;
+        top:2px;
+        left:2px;
+        z-index: -1;
+        width:100%;
+        height: 100%;
+        background: blue;
+    }
+    .container:hover{
+        background: yellow;
+        box-shadow: -1px 6px 23px 12px rgb(251 255 0 / 90%);
+        /* border-radius: 20%; */
+    }
+    
+   .container span:nth-child(1){
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 2px;
+        background:linear-gradient(to right,  #ffffff,rgba(39, 37, 156, 0.5)) ;
+        animation: amin1 linear 2s infinite;
+        
+
+    }
+    @keyframes amin1{
+        0%{
+            transform: translateX(-100%);
+        }
+       100%{
+            transform: translateX(100%);
+
+        }
+    }
+    .container span:nth-child(2){
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        width: 2px;
+        background:linear-gradient(to bottom,#ffffff,rgba(39, 37, 156, 0.5)) ;
+        animation: amin2 linear 2s infinite;
+        animation-delay: 1s;
+    }
+    @keyframes amin2{
+        0%{
+            transform: translateY(-100%);
+
+        }
+       100%{
+        transform: translateY(100%);
+
+        }
+    }
+    .container span:nth-child(3){
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 2px;
+        background:linear-gradient(to left,#ffffff,rgba(39, 37, 156, 0.5)) ;
+        animation: amin3 linear 2s infinite;
+
+    }
+    @keyframes amin3{
+        0%{
+            transform: translateX(100%);
+
+        }
+       100%{
+        transform: translateX(-100%);
+
+        }
+    }
+    .container span:nth-child(4){
+        position: absolute;
+        left: 0px;
+        height: 100%;
+        width: 2px;
+        background:linear-gradient(to top,#ffffff,rgba(39, 37, 156, 0.5)) ;
+        animation: amin4 linear 2s infinite;
+        animation-delay: 1s;
+
+    }
+    @keyframes amin4{
+        0%{
+            transform: translateY(100%);
+
+        }
+       100%{
+        transform: translateY(-100%);
+
+        }
+    }
+    .container:hover span{
+        background:yellow;
+        box-shadow: 0 25px 50px yellow;
+        
+    }
+</style>
+
+<body>
+    <div class="container">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+        Button
+    </div>
+</body>
+
+</html>

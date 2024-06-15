@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Hover Effect</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: grey;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        text-align: center;
+        width: 290px;
+        height: 325px;
+        border: 2px solid black;
+        border-radius: 15%;
+        padding-top: 25px;
+        padding-left: 35px;
+        padding-right: 35px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        transition: 5s;
+    }
+
+    .text {
+        width: 100px;
+        height: 90px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: bold;
+        position: relative;
+        z-index: -1;
+        left: 56px;
+        margin-bottom: 15px;
+        transition: .5s;
+        background: red;
+        
+    }
+
+    .card:hover .text {
+        color: rgb(255, 255, 255);
+        background: grey;
+        box-shadow: 0 0 0px 240px red;
+        transform: rotateY(360deg);
+       
+    }
+   
+
+
+    .main_text {
+        height: 150px;
+        width: 220px;
+        font-size: 18px;
+        padding-bottom: 12px;
+        transition: .5s;
+
+    }
+
+    .card:hover .main_text {
+        color: rgb(224, 215, 215);
+    }
+</style>
+
+<body>
+    <div class="card">
+        <div class="text">2022</div>
+        <div class="main_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias soluta odio corrupti dolor
+            architecto itaque debitis maiores cum suscipit et rem hic sequi, atque tempore totam cumque magnam vitae!
+            Doloremque.</div>
+    </div>
+</body>
+
+</html>

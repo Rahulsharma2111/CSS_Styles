@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: grey;
+        height: 68vh;
+        /* height: 100vh; */
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .box {
+        position: relative;
+        display: flex;
+        width: 500px;
+        height: 500px;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    .box span {
+        background: rgb(95, 92, 92);
+        position: absolute;
+        width: 10px;
+        height: 190px;
+        border-radius: 5px;
+        border-bottom: 30px solid grey;
+        transform: rotateZ(calc(18deg*var(--i)));
+        transform-origin: bottom;
+
+
+    }
+
+    .box span::after {
+        content: '';
+        position: absolute;
+        background: blue;
+        box-shadow: 0 0 20px blue, 0 0 30px rgba(0, 0, 255, 0.836);
+        height: 20px;
+        width: 10px;
+        border-radius: 5px;
+        animation: light 1.5s linear infinite;
+    }
+
+    @keyframes light {
+
+        0%,
+        100% {
+            transform: translateY(160px);
+            filter: hue-rotate(360deg);
+        }
+
+        50% {
+            transform: translateY(2px);
+            filter: hue-rotate(0deg);
+
+        }
+    }
+
+    .box span::before {
+        content: '';
+        position: absolute;
+        z-index: 1000;;
+        overflow: hidden;
+        background: blue;
+        box-shadow: 0 0 20px blue;
+        height: 12px;
+        width: 19px;
+        transform: rotateZ(-1deg);
+        bottom: 0;
+        animation: top_light 1.5s linear infinite;
+    }
+
+    .box span i {
+        height: 74px;
+        width: 13px;
+        background: grey;
+        position: absolute;
+        margin-top: -7px;
+        transform-origin: top;
+        transform: rotateZ(81.6deg);
+        border-left: 2px solid blue;
+        border-right: 2px solid blue;
+        animation:  top_light 1.5s linear infinite,
+         anmi 1.5s ease-in calc(0.3s*var(--i)) infinite,light_side 1.5s linear infinite;
+    }
+
+    @keyframes top_light {
+
+        0% {
+            filter: hue-rotate(0deg);
+           
+
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+
+        }
+    }
+    @keyframes anmi {
+
+        0%,45%,70.1%,100% {
+           background:grey ;
+           box-shadow: 0 0 20px grey,0 0 10px rgba(150, 146, 146, 0.781);
+           /* 0%,40%,65.1%,100% */
+        }
+
+        45.1%,70% {
+            /* 60.1%,65% */
+           background:red ;
+           box-shadow: 0 0 20px red,0 0 10px rgba(255, 0, 0, 0.774);
+
+        }
+    }
+    .box span i::before{
+        content: '';
+        position: absolute;
+        width:11px ;
+        height:74px ;
+        background: transparent;
+        box-shadow: 0 0 20px blue;
+        transform: rotateZ(0deg);
+        transform-origin: top;
+    }
+
+</style>
+
+<body>
+    <div class="box">
+        <span style="--i:0;"><i></i></span>
+        <span style="--i:1;"><i></i></span>
+        <span style="--i:2;"><i></i></span>
+        <span style="--i:3;"><i></i></span>
+        <span style="--i:4;"><i></i></span>
+        <span style="--i:5;"><i></i></span>
+        <span style="--i:6;"><i></i></span>
+        <span style="--i:7;"><i></i></span>
+        <span style="--i:8;"><i></i></span>
+        <span style="--i:9;"><i></i></span>
+        <span style="--i:10;"><i></i></span>
+        <span style="--i:11;"><i></i></span>
+        <span style="--i:12;"><i></i></span>
+        <span style="--i:13;"><i></i></span>
+        <span style="--i:14;"><i></i></span>
+        <span style="--i:15;"><i></i></span>
+        <span style="--i:16;"><i></i></span>
+        <span style="--i:17;"><i></i></span>
+        <span style="--i:18;"><i></i></span>
+        <span style="--i:19;"><i></i></span>
+        <span style="--i:20;"><i></i></span>
+
+    </div>
+</body>
+
+</html>

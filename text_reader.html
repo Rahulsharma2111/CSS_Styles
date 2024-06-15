@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><b>India is the best country in the world</b></p>
+</body>
+<script>
+    let text="India is the best country in the world";
+    let rahul = new SpeechSynthesisUtterance(text);
+    document.onclick = () =>{
+        speechSynthesis.speak(rahul);
+    }
+</script>
+</html>

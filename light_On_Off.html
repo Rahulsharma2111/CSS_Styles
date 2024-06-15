@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light On Off Button</title>
+</head>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+<body>
+    <div class="contanior">
+        <img id="image" src="img\360_F_571097072_nq58XTRUpiliUz1dozoYUbr03rxOy837.jpg" alt="on">
+        <!-- <img src="img\5697.jpg" alt="off"> -->
+        <button id="button">ON</button>
+    </div>
+</body>
+<script>
+    let button = document.getElementById("button");
+    let img = document.getElementById("image");
+    let caseon = 'on';
+    button.addEventListener('click',()=>{
+        if(caseon === 'on'){
+            button.innerText = "Off";
+            img.src='img/images (1).jpeg';
+            img.alt='on';
+            caseon = 'off'
+        }
+        else{
+            button.innerText = "On";
+            img.src='img/download (5).jpeg';
+            img.alt='off';
+            caseon = 'on'
+        }
+    }
+    )
+</script>
+</html>

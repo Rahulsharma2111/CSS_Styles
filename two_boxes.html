@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two boxes on each other</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: grey;
+    }
+    .cube{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+       
+    }
+
+    .cube .big{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:100% ;
+        width: 100%;
+        /* background: white; */
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(25deg);
+
+    }
+    .cube .big span{
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: var(--clr);
+        transform-style: preserve-3d;
+        transform: rotateY(calc(90deg*var(--i))) translateZ(99px);
+        transition: 0.2s;
+     
+
+    }
+    .cube:hover .big span {
+        border: 5px solid yellow;
+        background: transparent;
+        box-shadow: 0 0 20px yellow;
+        
+    }
+    
+    .cube .big .top{
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: var(--clr);
+        transform-style: preserve-3d;
+        transform: rotateX(90deg) translateZ(100px);
+    }
+    .cube .big .top::before{
+        content: '';
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: black;
+        transform-style: preserve-3d;
+        transform: translatez(-247px);
+        filter: blur(50px);
+    }
+
+    .cube2{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        transform: scale(0.5) translate(-150px, -337px) rotateY(180deg);
+    }
+
+    .cube2 .big{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:100% ;
+        width: 100%;
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(25deg);
+    }
+    .cube2 .big span{
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: var(--clr);
+        transform-style: preserve-3d;
+        transform: rotateY(calc(90deg*var(--i))) translateZ(99px);
+    }
+    .cube:hover ~ .cube2 .big span{
+        border: 6px solid rgb(255, 255, 255);
+        background: transparent;
+        box-shadow: 0 0 20px rgb(255, 255, 255);
+    }
+    .cube2 .big .top{
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: var(--clr);
+        transform-style: preserve-3d;
+        transform: rotateX(90deg) translateZ(100px);
+    }
+   
+    .cube2 .big .top::before{
+        content: '';
+        position: absolute;
+        height:200px ;
+        width: 200px;
+        background: black;
+        transform-style: preserve-3d;
+        transform: translatez(-247px);
+        filter: blur(100px);
+    }
+    /* animation fail
+      
+        transform-origin:center;
+        animation: cubes 13s ease-in infinite;
+    }
+    @keyframes cubes {
+        0%,100%{
+            transform: rotateY(0deg);
+        }
+        50%{
+            transform: rotateY(360deg);
+
+        }
+
+       */
+</style>
+
+<body>
+    <div class="cube">
+        <div class="big">
+            <span style="--i:0;--clr:#e2e2e2;"></span>
+            <span style="--i:1;--clr:#f0f0f0;"></span>
+            <span style="--i:2;--clr:#e2e2e2;"></span>
+            <span style="--i:3;--clr:#f0f0f0;"></span>
+            <span style="--i:4;--clr:#f4f4f4;" class="top"></span>
+
+        </div>
+    </div>
+    <div class="cube2">
+        <div class="big">
+            <span style="--i:0;--clr:#d1ce14;"></span>
+            <span style="--i:1;--clr:#ebe725;"></span>
+            <span style="--i:2;--clr:#d1ce14;"></span>
+            <span style="--i:3;--clr:#ebe725;"></span>
+            <span style="--i:4;--clr:#f0ec0b;" class="top"></span>
+
+        </div>
+    </div>
+</body>
+
+</html>

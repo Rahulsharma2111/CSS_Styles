@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #f1f1f1;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    #text{
+        position: relative;
+        color: #fff;
+        font-size: 160px;
+        font-weight: 700;
+        line-height: 176px;
+        letter-spacing: 2px;
+        text-align: center;
+        transform: rotate(-28deg) skew(25deg);
+    }
+    #text::before{
+        content: attr(data-text);
+        position: absolute;
+        top: 27px;
+        left: -82px;
+        color: rgba(0,0,0,0.3);
+        text-shadow: none;
+        filter: blur(5px);
+        z-index: -1;
+    }
+</style>
+<body>
+    <div id="text" data-text="Digital Source Code hub">Digital Source Code hub</div>
+    <script>
+        var text = document.getElementById('text')
+        var shadow ='';
+        for(var i = 0; i < 20; i++)
+        {
+            shadow +=(shadow? ',':'')+ -i*1+'px ' + i*1+'px 0 #d9d9d9';
+        }
+        text.style.textShadow = shadow;
+    </script>
+</body>
+</html>

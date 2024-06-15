@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .wrapper {
+        display: inline-flex;
+
+    }
+
+    .wrapper .static {
+        font-size: 50px;
+        color: blue;
+        font-weight: 500;
+
+    }
+
+    .wrapper .dynamic {
+        margin-left: 15px;
+        line-height: 70px;
+        height: 64px;
+        overflow: hidden;
+
+    }
+
+    .dynamic li {
+        list-style: none;
+        font-size: 50px;
+        font-weight: bold;
+        position: relative;
+        top: 0;
+        animation: topp 6s steps(5) infinite;
+
+}
+
+@keyframes topp {
+    100% {
+        top: -360px;
+    }
+}
+    .dynamic li span {
+        position: relative;
+    }
+
+    .dynamic li span::after {
+        content: '';
+        background:rgb(255, 251, 251) ;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-left: 3px solid grey;
+        animation: type 8s steps(16) infinite;
+
+    }
+
+    @keyframes type {
+        100% {
+            left: 100%;
+            margin: 0 -35px  0 45px;
+        }
+    }
+  
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="static">I am </div>
+        <ul class="dynamic">
+            <li><span>India</span></li>
+            <li><span>Bharat</span></li>
+            <li><span>Hindustan</span></li>
+            <li><span>Aryavrate</span></li>
+            <li><span>hind</span></li>
+        </ul>
+    </div>
+</body>
+
+</html>

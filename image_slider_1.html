@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+<style>
+    .slider{
+        overflow: hidden;
+    }
+    .slider figure{
+        position: relative;
+        width: 500vw;
+        margin: 0;
+        left: 0;
+        animation: slider 20s  infinite;
+    }
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+    
+}
+
+    .slider figure img{
+        float: left;
+    /* width:100vw; */
+    width:20%;
+    height: 100vh;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <div class="slider">
+        <figure>
+            <img src="img\360_F_571097072_nq58XTRUpiliUz1dozoYUbr03rxOy837.jpg" alt="1">
+            <img src="img\download (5).jpeg" alt="2">
+            <img src="img\pngegg (27).png" alt="3">
+            <img src="img\download (6).jpeg" alt="4">
+            <img src="img\images (1).jpeg" alt="5">
+        </figure>
+    </div>
+
+
+
+</body>
+</html>

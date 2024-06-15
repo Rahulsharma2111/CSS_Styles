@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting</title>
+</head>
+<style>
+    canvas{
+        /* height: 70%;
+        width: 70%; */
+        border: 3px solid black;
+    }
+</style>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let isDrawing = false;
+
+canvas.width = window.innerWidth;
+canvas.hight = window.innerHeight;
+
+canvas.addEventListener("mousedown", () =>{
+    isDrawing = true;
+    ctx.beginPath();
+    ctx.linewidth=5;
+});
+
+canvas.addEventListener("mousemove", e =>{
+    if(!isDrawing)return;
+    ctx.lineTo(e.offsetX,e.offsetY);
+    ctx.stroke();
+
+});
+
+
+canvas.addEventListener("mouseup", () => {
+    isDrawing =false;
+});
+    </script>
+</body>
+</html>
